@@ -4,10 +4,13 @@ class TodolistsController < ApplicationController
   end
   
   def create
-    list = List.new(list_paramas)
+    list = List.new(list_params)
     list.save
     redirect_to"/top"
-    
+  end
+  
+  def index
+    @lists = List.all
   end
   
   private
